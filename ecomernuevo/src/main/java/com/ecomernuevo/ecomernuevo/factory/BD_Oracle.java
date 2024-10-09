@@ -1,4 +1,4 @@
-package com.ecomernuevo.ecomernuevo.abstractfactory;
+package com.ecomernuevo.ecomernuevo.factory;
 
 import com.ecomernuevo.ecomernuevo.Producto;
 

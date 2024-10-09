@@ -1,7 +1,8 @@
-package com.ecomernuevo.ecomernuevo;
+package com.ecomernuevo.ecomernuevo.controller;
 
-import com.ecomernuevo.ecomernuevo.abstractfactory.IProductoDAO;
-import com.ecomernuevo.ecomernuevo.configuracion.ConfiguracionBD;
+import com.ecomernuevo.ecomernuevo.Producto;
+import com.ecomernuevo.ecomernuevo.factory.IProductoDAO;
+import com.ecomernuevo.ecomernuevo.configuracionfabrica.ConfiguracionBD;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -10,9 +11,10 @@ public class ProductoDAOController {
     private IProductoDAO productoDAO;
 
     public ProductoDAOController() {
-        ConfiguracionBD.configureAdapterDB("postgres");
+        ConfiguracionBD.configureAdapterDB();
         this.productoDAO = ConfiguracionBD.getProductoDAO();
     }
+
 
     @PostMapping
     public void agregarProducto(@RequestBody Producto producto) {
